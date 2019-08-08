@@ -1,6 +1,7 @@
 class Customer
 
-  attr_reader :name, :borrower_number, :books
+  attr_reader :name, :borrower_number
+  attr_accessor :books
 
   def initialize(name, borrower_number)
     @name = name
