@@ -8,4 +8,13 @@ class Customer
     @borrower_number = borrower_number
     @books = []
   end
+
+  # def try_to_borrow_book(book)
+  #   if @library.books_in_stock.include?(book)
+  #     @library.lend_book(book, self)
+  #   else
+  #     return "not in stock"
+  #   end
+  # end
+
 end
