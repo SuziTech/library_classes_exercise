@@ -1,5 +1,6 @@
 require('minitest/autorun')
 require('minitest/rg')
+require('pry')
 require_relative('../customer')
 require_relative('../book')
 require_relative('../library')
@@ -23,10 +24,16 @@ class TestCustomer < MiniTest::Test
     assert_equal([], @customer1.books)
   end
 
-  # def test_try_to_borrow_book__successful
-  #   @customer1.try_to_borrow_book(@book1)
-  #   assert_equal(1, @customer1.books.count)
-  # end
+  def test_library_can_add_book
+    @library.add_book(@book1)
+    @library.add_book(@book2)
+    assert_equal(2, @library.books_in_stock.count)
+  end
+
+  def test_try_to_borrow_book__successful    
+    @customer1.try_to_borrow_book(@book1)
+    assert_equal(1, @customer1.books.count)
+  end
   #
   # def test_try_to_borrow_book__unsuccessful
   #

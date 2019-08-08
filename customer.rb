@@ -9,12 +9,13 @@ class Customer
     @books = []
   end
 
-  # def try_to_borrow_book(book)
-  #   if @library.books_in_stock.include?(book)
-  #     @library.lend_book(book, self)
-  #   else
-  #     return "not in stock"
-  #   end
-  # end
+  def try_to_borrow_book(book)
+    #binding.pry
+    if true #@library.books_in_stock.include?(book)
+      @library.lend_book(book, self)
+    else
+      return "not in stock"
+    end
+  end
 
 end

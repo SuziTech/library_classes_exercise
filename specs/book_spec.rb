@@ -1,8 +1,8 @@
 require('minitest/autorun')
 require('minitest/rg')
 require_relative('../book')
-# require_relative('../library')
-# require_relative('../customer')
+require_relative('../library')
+require_relative('../customer')
 
 class TestBook < MiniTest::Test
 
@@ -19,7 +19,7 @@ class TestBook < MiniTest::Test
   end
 
   def test_book_is_available
-    assert_equal(nil, @book1.on_loan_until_date)
+    assert_nil(@book1.on_loan_until_date, msg=nil)
   end
 
 end

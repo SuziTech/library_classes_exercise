@@ -9,7 +9,7 @@ require_relative('../customer')
 class TestLibrary < MiniTest::Test
 
   def setup
-    @library = Library.new('Central Library')
+    @library = Library.new('Central Library', 21)
     @book1 = Book.new('1', 'To Kill a Mockingbird')
     @book2 = Book.new('2', '1984')
     @book3 = Book.new('3', 'Orlando')
@@ -45,10 +45,10 @@ class TestLibrary < MiniTest::Test
   end
 
   def test_lend_book_due_date_updates
-    binding.pry
+    # binding.pry
     @library.add_book(@book1)
     @library.lend_book(@book1, @customer1)
-    assert_equal(Date.today + 14, @book1.on_loan_until_date)
+    assert_equal(Date.today + 21, @book1.on_loan_until_date)
   end
 
 
