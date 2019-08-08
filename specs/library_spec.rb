@@ -11,6 +11,7 @@ class TestLibrary < MiniTest::Test
     @book1 = Book.new('1', 'To Kill a Mockingbird')
     @book2 = Book.new('2', '1984')
     @book3 = Book.new('3', 'Orlando')
+    @customer1 = Customer.new('John', '684')
   end
 
   def test_get_library_name
@@ -18,14 +19,24 @@ class TestLibrary < MiniTest::Test
   end
 
   def test_library_starts_with_no_books
-    assert_equal(0, @library.books.count)
+    assert_equal(0, @library.books_in_stock.count)
   end
 
   def test_library_can_add_book
     @library.add_book(@book1)
     @library.add_book(@book2)
-    assert_equal(2, @library.books.count)
+    assert_equal(2, @library.books_in_stock.count)
   end
+
+  def test_library_can_lend_book
+    @library.add_book(@book1)
+    @library.add_book(@book2)
+    @library.lend_book(@book1, @customer1)
+    assert_equal(1, @library.books_in_stock.count)
+    assert_equal(1, @library.books_on_loan.count)
+  end
+
+
 
 
 end
