@@ -30,8 +30,8 @@ class TestCustomer < MiniTest::Test
     assert_equal(2, @library.books_in_stock.count)
   end
 
-  def test_try_to_borrow_book__successful    
-    @customer1.try_to_borrow_book(@book1)
+  def test_try_to_borrow_book__successful
+    @customer1.try_to_borrow_book(@book1, @library)
     assert_equal(1, @customer1.books.count)
   end
   #
