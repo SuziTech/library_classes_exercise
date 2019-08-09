@@ -17,7 +17,7 @@ class Library
   end
 
   def lend_book(book, customer)
-    binding.pry
+    #binding.pry
     @books_in_stock.delete(book)
     @books_on_loan.push(book)
     customer.books.push(book)

@@ -10,6 +10,7 @@ class TestCustomer < MiniTest::Test
   def setup
     @customer1 = Customer.new('John', '684')
     @book1 = Book.new('1', 'To Kill a Mockingbird')
+    @library = Library.new('Central Library', 21)
   end
 
   def test_get_customer_name
